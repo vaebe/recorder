@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Recorder Test</title>
+  <script src="./dist/recorder.iife.js"></script>
+</head>
+<body>
+<h1>Recorder Test</h1>
+<button id="start">开始录音</button>
+<button id="pause">暂停录音</button>
+<button id="resume">恢复录音</button>
+<button id="stop">停止录音</button>
+<button id="play">播放录音</button>
+
+<script>
+  // 假设你的库已经全局暴露为 'Recorder'
+  const recorder = new window.Recorder.Recorder();
+  let audioBlobUrl = null;
+
+  document.getElementById('start').addEventListener('click', () => {
+    recorder.start().then(() => {
+      console.log('录音开始');
+    }).catch(console.error);
+  });
+
+  document.getElementById('pause').addEventListener('click', () => {
+    recorder.pause().then(() => {
+      console.log('录音暂停');
+    }).catch(console.error);
+  });
+
+  document.getElementById('resume').addEventListener('click', () => {
+    recorder.resume().then(() => {
+      console.log('录音恢复');
+    }).catch(console.error);
+  });
+
+  document.getElementById('stop').addEventListener('click', () => {
+    recorder.stop().then(() => {
+      console.log('录音停止');
+      // 获取录音数据并创建 Blob URL
+      const blob = recorder.getData();
+      audioBlobUrl = URL.createObjectURL(blob);
+    }).catch(console.error);
+  });
+
+  document.getElementById('play').addEventListener('click', () => {
+    if (audioBlobUrl) {
+      // 创建 audio 元素并播放
+      const audio = new Audio(audioBlobUrl);
+      audio.play();
+    } else {
+      console.log('没有录音数据可以播放');
+    }
+  });
+</script>
+</body>
+</html>
