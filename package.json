@@ -1,0 +1,40 @@
+{
+  "name": "recorder",
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "build": "vite build"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/recorder.umd.cjs",
+  "module": "./dist/recorder.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/recorder.js",
+      "require": "./dist/recorder.umd.cjs"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "recorder",
+    "vue2",
+    "vue3",
+    "react"
+  ],
+  "description": "一个简单的录音库,仅实现录音、获取录音文件的方法",
+  "author": "vaebe",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.12.13",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.12",
+    "vite-plugin-dts": "^3.9.1"
+  }
+}
