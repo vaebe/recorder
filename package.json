@@ -1,12 +1,14 @@
 {
   "name": "@vaebe/recorder",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "module",
   "scripts": {
     "build": "vite build"
   },
   "files": [
-    "dist"
+    "dist",
+    "package.json",
+    "README.md"
   ],
   "main": "./dist/recorder.umd.cjs",
   "module": "./dist/recorder.js",
