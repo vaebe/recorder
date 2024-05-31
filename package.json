@@ -1,7 +1,8 @@
 {
   "name": "@vaebe/recorder",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "type": "module",
+  "private": false,
   "scripts": {
     "build": "vite build"
   },
