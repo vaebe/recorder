@@ -14,8 +14,7 @@
 <button id="play">播放录音</button>
 
 <script>
-  // 假设你的库已经全局暴露为 'Recorder'
-  const recorder = new window.Recorder.Recorder();
+  const recorder = new Recorder();
   let audioBlobUrl = null;
 
   document.getElementById('start').addEventListener('click', () => {

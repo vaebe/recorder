@@ -1,6 +1,6 @@
 import { getUserMedia, getAudioInputDevices } from '../utils';
 
-export class Recorder {
+export default class Recorder {
   private _audioChunks: BlobPart[];
   private _mediaRecorder: MediaRecorder | null;
   private _stream: MediaStream | null;

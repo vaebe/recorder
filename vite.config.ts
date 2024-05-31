@@ -10,7 +10,7 @@ export default defineConfig({
       entry: resolve(__dirname, 'src/index.ts'),
       name: 'Recorder',
       fileName: 'recorder',
-      formats: ['es', 'cjs', 'umd', 'iife']
+      formats: ['es', 'iife']
     }
   },
 })

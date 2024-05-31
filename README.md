@@ -2,8 +2,21 @@
 
 一个简单的录音库,仅实现录音、获取录音文件的方法,只有 2kb
 
+# 安装
+```
+npm i @vaebe/recorder
+```
 # 使用
 ```ts
+const recorder = new Recorder();
+
+recorder.start().then(() => {
+  console.log('录音开始');
+}).catch(console.error);
+
+recorder.pause().then(() => {
+  console.log('录音暂停');
+}).catch(console.error);
 ```
 
 # 方法
